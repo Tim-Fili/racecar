@@ -22,7 +22,7 @@ carImg = pygame.image.load('/Users/tim/Desktop/coding_projects/Python/projects/r
 def car(x,y):
     gameDisplay.blit(carImg, (x,y))
 
-def text_objects(text, font, color):
+def text_objects(text, font):
     textSurface = font.render(text, True, red)
     return textSurface, textSurface.get_rect()
 
@@ -32,7 +32,7 @@ def message_display(text):
     TextRect.center = ((display_width/2),(display_height/2))
     gameDisplay.blit(TextSurf, TextRect)
 
-    pygame.gameDisplay.update()
+    pygame.display.update()
 
     time.sleep(3)
 
@@ -40,7 +40,8 @@ def message_display(text):
 
 
 def crash():
-    message_display('You Crashed! Wow you Suck!')
+    message_display("""You Crashed!/n 
+                    Wow you SUCK!""")
 
 def game_loop():
 
@@ -54,7 +55,8 @@ def game_loop():
     while not gameExit:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                gameExit = True
+                pygame.quit()
+                quit()
 
             if event.type == pygame.KEYDOWN: #Did someone push a key
                 if event.key == pygame.K_LEFT:
