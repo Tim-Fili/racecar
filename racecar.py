@@ -40,8 +40,7 @@ def message_display(text):
 
 
 def crash():
-    message_display("""You Crashed!/n 
-                    Wow you SUCK!""")
+    message_display("You Suck!")
 
 def game_loop():
 
@@ -60,10 +59,10 @@ def game_loop():
 
             if event.type == pygame.KEYDOWN: #Did someone push a key
                 if event.key == pygame.K_LEFT:
-                    x_change = -5
+                    x_change = -10
                 elif event.key == pygame.K_RIGHT:
-                    x_change = 5
-
+                    x_change = 10
+                
             if event.type == pygame.KEYUP: #makes so the car doesnt keep scrolling
                 if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                     x_change = 0
